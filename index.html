@@ -13,6 +13,18 @@
       line-height: 1.7;
     }
 
+    /* Logo bar with black background */
+    .logo-bar {
+      background-color: #000;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .logo-bar img {
+      max-height: 100px;
+      width: auto;
+    }
+
     nav {
       position: sticky;
       top: 0;
@@ -40,35 +52,6 @@
       background: #222;
     }
 
-    .inspiration-banner {
-      background: #111;
-      color: #ffd700;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 1.15rem;
-      letter-spacing: 1.2px;
-      overflow: hidden;
-      white-space: nowrap;
-      user-select: none;
-    }
-
-    .inspiration-text {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scrollText 20s linear infinite;
-    }
-
-    @keyframes scrollText {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
     header {
       background: #111 url('images/header-image.jpg') center/cover no-repeat;
       color: #fff;
@@ -80,7 +63,6 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
-      position: relative;
     }
 
     header h1 {
@@ -90,7 +72,6 @@
       letter-spacing: 3px;
       margin: 0;
       text-transform: uppercase;
-      text-shadow: 0 0 6px #ffd700aa;
     }
 
     header .tagline {
@@ -173,122 +154,64 @@
       margin: 0 auto;
       line-height: 1.7;
     }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px 30px;
-      color: #777;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
-      user-select: none;
-      border-top: 1px solid #eee;
-    }
-
-    @media (max-width: 720px) {
-      header h1 {
-        font-size: 2.7rem;
-      }
-      header .tagline {
-        max-width: 90%;
-        font-size: 1rem;
-      }
-      header p {
-        font-size: 1.1rem;
-      }
-      .section h2 {
-        font-size: 1.8rem;
-      }
-      .section p {
-        font-size: 1rem;
-      }
-      nav {
-        gap: 25px;
-      }
-    }
-
-    .social-links {
-      margin-top: 30px;
-      font-weight: 600;
-      text-align: center;
-    }
-    .social-links a {
-      margin-right: 20px;
-      color: #222;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .social-links a:last-child {
-      margin-right: 0;
-    }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#merch">Shop</a>
-  <a href="#connect">Connect</a>
-</nav>
-
-<div class="inspiration-banner" aria-label="Inspirational phrases">
-  <div class="inspiration-text">
-    Strength &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-    Resilience &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-    Protection &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-    Faith &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-    Hope &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-    Divine Energy &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <!-- Logo Bar -->
+  <div class="logo-bar">
+    <img src="https://raw.githubusercontent.com/crlzzy/Angelfigure/main/image_1_af-removebg.png" alt="Angel Figure Logo" />
   </div>
-</div>
 
-<header id="home">
-  <h1>ANGEL FIGURE</h1>
-  <div class="tagline">wear your story</div>
-  <p>For the ones who carry it all — seen, unseen, and deeply protected.</p>
-  <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
-</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#merch">Shop</a>
+    <a href="#connect">Connect</a>
+  </nav>
 
-<section class="section" id="inspiration">
-  <h2>For Every Story</h2>
-  <p>
-    We all carry battles no one sees.<br />
-    This is your shield and your reminder:<br />
-    You are held in love.<br />
-    Your strength is quiet but unbreakable.<br />
-    Your journey matters — even on the days you feel invisible.<br />
-    Keep moving. Keep rising. You are never alone.
-  </p>
-</section>
+  <header id="home">
+    <h1>ANGEL FIGURE</h1>
+    <div class="tagline">wear your story</div>
+    <p>For the ones who carry it all — seen, unseen, and deeply protected.</p>
+    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
+  </header>
 
-<section class="section" id="merch">
-  <h2>Merch</h2>
-  <p>Product images coming soon.</p>
-  <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
-</section>
+  <section class="section" id="inspiration">
+    <h2>For Every Story</h2>
+    <p>
+      We all carry battles no one sees.<br />
+      This is your shield and your reminder:<br />
+      You are held in love.<br />
+      Your strength is quiet but unbreakable.<br />
+      Your journey matters — even on the days you feel invisible.<br />
+      Keep moving. Keep rising. You are never alone.
+    </p>
+  </section>
 
-<section class="section" id="connect">
-  <h2>Stay Connected</h2>
-  <p>
-    Join our community to get exclusive updates, early access to new drops, special offers, and inspirational content delivered straight to your inbox or phone.<br />
-    Simply enter your email and, if you want, your phone number for SMS alerts. We respect your privacy and promise no spam—just love and good vibes.
-  </p>
-  <div style="max-width: 640px; margin: 0 auto;">
+  <section class="section" id="merch">
+    <h2>Merch</h2>
+    <p>Product images coming soon.</p>
+    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
+  </section>
+
+  <section class="section" id="connect">
+    <h2>Stay Connected</h2>
+    <p>Get drops, updates, and community vibes straight to your inbox and phone.</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcKQye_xwOncjptOofzVsOjthbSlx0TzsQzxb6cxH6lpJoA/viewform?embedded=true" width="640" height="825" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </div>
-  <div class="social-links">
-    <a href="https://instagram.com/angelfiguree" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="https://tiktok.com/@angelfigure" target="_blank" rel="noopener noreferrer">TikTok</a>
-  </div>
-</section>
+    <div style="margin-top: 40px;">
+      <a href="https://instagram.com/angelfiguree" target="_blank" rel="noopener noreferrer" style="margin-right: 20px; color:#222; font-weight:bold; text-decoration:none;">Instagram</a>
+      <a href="https://tiktok.com/@angelfigure" target="_blank" rel="noopener noreferrer" style="color:#222; font-weight:bold; text-decoration:none;">TikTok</a>
+    </div>
+  </section>
 
-<footer>
-  <p>
-    Your story matters.<br />
-    You are seen. You are protected. You are loved.<br />
-    And it’s here — always.
-  </p>
-  <p>© 2025 Angel Figure</p>
-</footer>
+  <footer>
+    <p>
+      Your story matters.<br />
+      You are seen. You are protected. You are loved.<br />
+      And it’s here — always.
+    </p>
+    <p>© 2025 Angel Figure</p>
+  </footer>
 
 </body>
 </html>
