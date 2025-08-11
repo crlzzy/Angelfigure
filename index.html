@@ -2,62 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angel Figure</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       color: #222;
       background: #fff;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Top header with logo + brand name and nav */
+    /* Header top nav */
     .top-header {
       background-color: #000;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 20px;
+      padding: 12px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-
     .logo-container a {
       display: flex;
       align-items: center;
       text-decoration: none;
       color: #fff;
     }
-
     .logo-container img {
       max-height: 70px;
       width: auto;
-      margin-right: 8px;
+      margin-right: 10px;
       transition: transform 0.3s ease;
       cursor: pointer;
+      display: block;
     }
-
     .brand-name {
       font-family: 'Cinzel', serif;
       font-weight: 700;
       font-size: 1.4rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      user-select: none;
     }
-
     nav {
       display: flex;
-      gap: 25px;
+      gap: 30px;
       font-weight: 600;
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 0.8px;
       font-size: 1rem;
     }
-
     nav a {
       color: #fff;
       text-decoration: none;
@@ -65,151 +69,134 @@
       border-radius: 3px;
       transition: color 0.25s ease, background 0.25s ease;
     }
-
-    nav a:hover {
+    nav a:hover,
+    nav a:focus-visible {
       color: #ffd700;
       background: #222;
+      outline-offset: 2px;
+      outline: 2px solid #ffd700;
     }
 
-    header#home {
+    /* Header container with merch previews */
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
       background: #111 url('images/header-image.jpg') center/cover no-repeat;
       color: #fff;
-      text-align: center;
-      padding: 120px 20px 80px;
       user-select: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.7);
     }
 
-    header#home h1 {
+    /* Left side - header text */
+    .header-text {
+      flex: 1 1 350px;
+      min-width: 300px;
+      max-width: 550px;
+    }
+    .header-text h1 {
       font-family: 'Cinzel', serif;
       font-weight: 700;
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       letter-spacing: 3px;
-      margin: 0;
+      margin: 0 0 20px;
       text-transform: uppercase;
-    }
-
-    header#home p.small-text {
-      font-size: 0.9rem;
-      color: #eee;
-      letter-spacing: 1.2px;
-      margin: 8px 0 20px 0;
-      font-style: normal;
-      max-width: 400px;
-      text-transform: uppercase;
-      font-family: 'Montserrat', sans-serif;
+      line-height: 1.1;
       user-select: none;
     }
-
-    header#home .tagline {
+    .header-text p.small-text {
+      font-size: 1rem;
+      color: #ddd;
+      letter-spacing: 1.2px;
+      margin: 0 0 20px;
+      font-style: normal;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .header-text .tagline {
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
-      font-size: 1.15rem;
+      font-size: 1.3rem;
       letter-spacing: 1.5px;
       color: #ffd700;
-      max-width: 350px;
       text-transform: uppercase;
       font-style: normal;
+      margin-bottom: 25px;
     }
-
     .btn {
       background: #ffd700;
       color: #111;
       font-weight: 700;
-      padding: 16px 40px;
+      padding: 16px 48px;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.15rem;
-      border-radius: 5px;
+      border-radius: 6px;
       border: none;
       cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
       text-transform: uppercase;
       letter-spacing: 1.2px;
-      box-shadow: 0 5px 15px rgb(255 215 0 / 0.5);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
       text-decoration: none;
       display: inline-block;
+      user-select: none;
     }
-
-    .btn:hover {
+    .btn:hover,
+    .btn:focus-visible {
       background: #e6c200;
-      box-shadow: 0 8px 20px rgb(230 194 0 / 0.7);
+      box-shadow: 0 8px 20px rgba(230, 194, 0, 0.7);
+      outline-offset: 3px;
+      outline: 3px solid #e6c200;
     }
 
-    .section {
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
+    /* Right side - merch preview images */
+    .merch-preview {
+      flex: 1 1 400px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: nowrap;
+      min-width: 320px;
+      max-width: 460px;
+    }
+    .merch-preview img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      display: block;
+    }
+    .merch-preview img:hover,
+    .merch-preview img:focus-visible {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      outline-offset: 4px;
+      outline: 4px solid #ffd700;
     }
 
-    .section h2 {
-      font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: 2.3rem;
-      margin-bottom: 25px;
-      color: #111;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      color: #444;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-    }
-
-    #inspiration p {
-      font-style: italic;
-      color: #555;
-      font-weight: 500;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* Contact Section */
-    #contact p {
-      font-size: 1.1rem;
-      color: #222;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    #contact a {
-      color: #ffd700;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    #contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* Slideshow styles */
+    /* Slideshow container */
     #slideshow {
-      margin: 40px auto 0;
+      margin: 40px auto 80px;
       max-width: 900px;
       height: 360px;
       border: 3px solid rgba(128, 128, 128, 0.5);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       position: relative;
       background: #f9f9f9;
     }
-
     #slideshow img {
       width: 100%;
       height: 360px;
@@ -221,40 +208,179 @@
       opacity: 0;
       transition: opacity 0.7s ease-in-out;
       border-radius: 8px;
+      user-select: none;
     }
-
     #slideshow img.active {
       opacity: 1;
       position: relative;
+    }
+
+    /* Other sections styling */
+    .section {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .section h2 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin-bottom: 25px;
+      color: #111;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .section p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      user-select: text;
+    }
+    #inspiration p {
+      font-style: italic;
+      color: #555;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+      user-select: text;
+    }
+
+    /* Contact Section */
+    #connect p {
+      font-size: 1.1rem;
+      color: #222;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+      user-select: text;
+    }
+    #connect iframe {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      border: none;
+      margin-bottom: 40px;
+    }
+    #connect a {
+      color: #ffd700;
+      font-weight: 600;
+      text-decoration: none;
+      user-select: none;
+      font-size: 1rem;
+    }
+    #connect a:hover,
+    #connect a:focus-visible {
+      text-decoration: underline;
+      outline-offset: 3px;
+      outline: 3px solid #ffd700;
+      border-radius: 3px;
+    }
+    #connect div {
+      margin-top: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #ddd;
+      text-align: center;
+      padding: 30px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      user-select: none;
+      border-top: 3px solid #ffd700;
+    }
+    footer p {
+      margin: 0 0 10px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .header-container {
+        flex-direction: column;
+        padding: 60px 20px 40px;
+        gap: 35px;
+        text-align: center;
+      }
+      .merch-preview {
+        max-width: 520px;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .merch-preview img {
+        max-width: 48%;
+        margin-bottom: 20px;
+      }
+      .header-text h1 {
+        font-size: 3rem;
+      }
+      .header-text p.small-text,
+      .header-text .tagline {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 500px) {
+      .merch-preview img {
+        max-width: 100%;
+        margin-bottom: 15px;
+      }
+      nav {
+        gap: 18px;
+      }
+      .top-header {
+        padding: 12px 15px;
+      }
+      .header-text h1 {
+        font-size: 2.5rem;
+      }
+      .btn {
+        padding: 14px 32px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header class="top-header">
+  <header class="top-header" role="banner">
     <div class="logo-container">
-      <a href="#home" aria-label="Home">
+      <a href="#home" aria-label="Go to Home section">
         <img src="https://raw.githubusercontent.com/crlzzy/Angelfigure/main/image_1_af-removebg.png" alt="Angel Figure Logo" />
         <span class="brand-name">ANGEL FIGURE</span>
       </a>
     </div>
-    <nav>
+    <nav role="navigation" aria-label="Primary navigation">
       <a href="#home">Home</a>
       <a href="#merch">Shop</a>
       <a href="#connect">Connect</a>
     </nav>
   </header>
 
-  <header id="home">
-    <h1>ANGEL FIGURE</h1>
-    <p class="small-text">For the ones who carry it all seen, unseen, and deeply protected.</p>
-    <div class="tagline">wear your story</div>
-    <!-- Moved shop now here -->
-    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
-  </header>
+  <section class="header-container" id="home" role="region" aria-label="Intro and featured merch">
+    <div class="header-text">
+      <h1>ANGEL FIGURE</h1>
+      <p class="small-text">For the ones who carry it all seen, unseen, and deeply protected.</p>
+      <div class="tagline">wear your story</div>
+      <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
+    </div>
+    <div class="merch-preview" aria-label="Featured merch preview images">
+      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure merch preview 1" tabindex="0" />
+      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure merch preview 2" tabindex="0" />
+    </div>
+  </section>
 
-  <!-- Moved merch slideshow right after shop now -->
-  <section id="slideshow">
+  <section id="slideshow" aria-label="Merch slideshow gallery">
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure merch 1" class="active" />
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure merch 2" />
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender.jpeg" alt="Angel Figure merch 3" />
@@ -266,12 +392,12 @@
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0729.jpeg" alt="Angel Figure merch 9" />
   </section>
 
-  <section class="section" id="merch">
+  <section class="section" id="merch" role="region" aria-label="Shop merchandise">
     <h2>Merch</h2>
     <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
   </section>
 
-  <section class="section" id="inspiration">
+  <section class="section" id="inspiration" role="region" aria-label="Inspiration and brand story">
     <h2>For Every Story</h2>
     <p>
       We all carry battles no one sees.<br />
@@ -289,17 +415,17 @@
     </p>
   </section>
 
-  <section class="section" id="connect">
+  <section class="section" id="connect" role="region" aria-label="Connect and subscribe">
     <h2>Stay Connected</h2>
     <p>Get drops, updates, and community vibes straight to your inbox and phone.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcKQye_xwOncjptOofzVsOjthbSlx0TzsQzxb6cxH6lpJoA/viewform?embedded=true" width="640" height="825" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    <div style="margin-top: 40px;">
-      <a href="https://instagram.com/angelfiguree" target="_blank" rel="noopener noreferrer" style="margin-right: 20px; color:#222; font-weight:bold; text-decoration:none;">Instagram</a>
-      <a href="https://tiktok.com/@angelfigure" target="_blank" rel="noopener noreferrer" style="color:#222; font-weight:bold; text-decoration:none;">TikTok</a>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZcKQye_xwOncjptOofzVsOjthbSlx0TzsQzxb6cxH6lpJoA/viewform?embedded=true" width="640" height="825" loading="lazy" title="Subscription form"></iframe>
+    <div>
+      <a href="https://instagram.com/angelfiguree" target="_blank" rel="noopener noreferrer" style="margin-right: 20px;">Instagram</a>
+      <a href="https://tiktok.com/@angelfigure" target="_blank" rel="noopener noreferrer">TikTok</a>
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <p>
       Your story matters.<br />
       You are seen. You are protected. You are loved.<br />
@@ -309,6 +435,7 @@
   </footer>
 
   <script>
+    // Slideshow functionality
     const slides = document.querySelectorAll('#slideshow img');
     let currentIndex = 0;
     const slideInterval = 3000; // 3 seconds
@@ -328,7 +455,5 @@
   </script>
 </body>
 </html>
-
-
 
 
