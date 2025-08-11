@@ -10,7 +10,7 @@
       font-family: 'Montserrat', Arial, sans-serif;
       color: #222;
       background: #fff;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     /* Top header with logo + brand name and nav */
@@ -71,7 +71,7 @@
       background: #222;
     }
 
-    header {
+    header#home {
       background: #111 url('images/header-image.jpg') center/cover no-repeat;
       color: #fff;
       text-align: center;
@@ -81,10 +81,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
     }
 
-    header h1 {
+    header#home h1 {
       font-family: 'Cinzel', serif;
       font-weight: 700;
       font-size: 3.5rem;
@@ -93,7 +93,19 @@
       text-transform: uppercase;
     }
 
-    header .tagline {
+    header#home p.small-text {
+      font-size: 0.9rem;
+      color: #eee;
+      letter-spacing: 1.2px;
+      margin: 8px 0 20px 0;
+      font-style: normal;
+      max-width: 400px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      user-select: none;
+    }
+
+    header#home .tagline {
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
       font-size: 1.15rem;
@@ -102,18 +114,6 @@
       max-width: 350px;
       text-transform: uppercase;
       font-style: normal;
-    }
-
-    header p {
-      max-width: 600px;
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: 0.4px;
-      margin: 0 auto;
-      font-style: italic;
-      font-family: 'Montserrat', sans-serif;
-      color: #eee;
-      line-height: 1.5;
     }
 
     .btn {
@@ -158,15 +158,14 @@
     }
 
     .section p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #444;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.5;
+      line-height: 1.6;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      white-space: pre-line;
     }
 
     #inspiration p {
@@ -175,8 +174,7 @@
       font-weight: 500;
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.5;
-      font-size: 1rem;
+      line-height: 1.7;
     }
 
     /* Contact Section */
@@ -249,28 +247,12 @@
 
   <header id="home">
     <h1>ANGEL FIGURE</h1>
+    <p class="small-text">For the ones who carry it all seen, unseen, and deeply protected.</p>
     <div class="tagline">wear your story</div>
-    <p>For the ones who carry it all seen, unseen, and deeply protected.</p>
     <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
   </header>
 
-  <section class="section" id="inspiration">
-    <h2>For Every Story</h2>
-    <p>
-We all carry battles no one sees.
-You are held in God’s steady love no matter your flaws.
-Your strength is quiet but unbreakable, fueled by faith that keeps you moving forward.
-No one’s perfect and that’s okay. Your story matters because it’s real.
-Keep pushing. Keep rising. You’re never alone.
-
-Born and built in North York Toronto Ontario, and St. Catharines Ontario.
-Rooted in family, community, and faith that lifts us higher,
-backed by those who believe in us as much as we believe in them.
-This is loyalty. This is the relentless hustle guided by purpose and God’s hand.
-For the fighters, the dreamers, and everyone riding with you.
-    </p>
-  </section>
-
+  <!-- Moved merch section here -->
   <section id="slideshow">
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure merch 1" class="active" />
     <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure merch 2" />
@@ -286,6 +268,24 @@ For the fighters, the dreamers, and everyone riding with you.
   <section class="section" id="merch">
     <h2>Merch</h2>
     <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
+  </section>
+
+  <section class="section" id="inspiration">
+    <h2>For Every Story</h2>
+    <p>
+      We all carry battles no one sees.<br />
+      This is your shield and your reminder:<br />
+      You are held in love.<br />
+      Your strength is quiet but unbreakable.<br />
+      Your journey matters even on the days you feel like no one notices.<br />
+      Keep moving. Keep rising. You are never alone.
+    </p>
+    <p>
+      Created in North York Toronto and St. Catharines.<br />
+      Rooted in family, community, and those who believe in us as much as we believe in them.<br />
+      This is about loyalty, drive, and the hustle to rise no matter what.<br />
+      For the fighters, the dreamers, and everyone riding with you.
+    </p>
   </section>
 
   <section class="section" id="connect">
@@ -327,4 +327,5 @@ For the fighters, the dreamers, and everyone riding with you.
   </script>
 </body>
 </html>
+
 
