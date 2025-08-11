@@ -11,6 +11,7 @@
       color: #222;
       background: #fff;
       line-height: 1.7;
+      scroll-behavior: smooth;
     }
 
     /* Logo bar with black background */
@@ -21,8 +22,13 @@
     }
 
     .logo-bar img {
-      max-height: 100px;
+      max-height: 120px; /* increased size */
       width: auto;
+      cursor: pointer; /* to show clickable */
+      transition: transform 0.3s ease;
+    }
+    .logo-bar img:hover {
+      transform: scale(1.05);
     }
 
     nav {
@@ -155,6 +161,16 @@
       line-height: 1.7;
     }
 
+    #community p {
+      font-style: italic;
+      color: #555;
+      font-weight: 600;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-family: 'Montserrat', sans-serif;
+    }
+
     /* Contact Section */
     #contact p {
       font-size: 1.1rem;
@@ -172,20 +188,46 @@
     #contact a:hover {
       text-decoration: underline;
     }
+
+    /* Image slideshow container */
+    #slideshow {
+      margin: 40px auto;
+      max-width: 900px;
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 10px;
+      border: 2px solid rgba(128,128,128,0.3); /* subtle grey border */
+      border-radius: 10px;
+      scroll-behavior: smooth;
+    }
+    #slideshow img {
+      height: 180px;
+      border: 2px solid rgba(128,128,128,0.3);
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #slideshow img:hover {
+      transform: scale(1.05);
+      border-color: rgba(255,215,0,0.6);
+      box-shadow: 0 0 10px rgba(255,215,0,0.8);
+    }
   </style>
 </head>
 <body>
 
   <!-- Logo Bar -->
   <div class="logo-bar">
-    <img src="https://raw.githubusercontent.com/crlzzy/Angelfigure/main/image_1_af-removebg.png" alt="Angel Figure Logo" />
+    <a href="#home"><img src="https://raw.githubusercontent.com/crlzzy/Angelfigure/main/image_1_af-removebg.png" alt="Angel Figure Logo" /></a>
   </div>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#merch">Shop</a>
     <a href="#connect">Connect</a>
-    <a href="#about">About</a>
   </nav>
 
   <header id="home">
@@ -202,14 +244,38 @@
       This is your shield and your reminder:<br />
       You are held in love.<br />
       Your strength is quiet but unbreakable.<br />
-      Your journey matters — even on the days you feel invisible.<br />
+      Your journey matters — even on the days you feel strong.<br />
       Keep moving. Keep rising. You are never alone.
+    </p>
+  </section>
+
+  <section class="section" id="community">
+    <h2>Rooted Together</h2>
+    <p>
+      For the ones who’ve got your back — family, friends, and everyone grinding beside you.<br />
+      Angel Figure was born in two strong cities: North York (Toronto) and St. Catharines,<br />
+      places built on strength, culture, and unbreakable spirit.<br />
+      No matter where you’re from, you’re part of this crew.<br />
+      Together, we stand firm, confident, and protected.
     </p>
   </section>
 
   <section class="section" id="merch">
     <h2>Merch</h2>
     <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
+  </section>
+
+  <!-- Slideshow of images -->
+  <section id="slideshow">
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure 1" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure 2" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender.jpeg" alt="Angel Figure 3" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0207.jpeg" alt="Angel Figure 4" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0699.jpeg" alt="Angel Figure 5" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0700.jpeg" alt="Angel Figure 6" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0708.jpeg" alt="Angel Figure 7" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0716.jpeg" alt="Angel Figure 8" />
+    <img src="https://github.com/crlzzy/Angelfigure/raw/main/IMG_0729.jpeg" alt="Angel Figure 9" />
   </section>
 
   <section class="section" id="connect">
@@ -220,14 +286,6 @@
       <a href="https://instagram.com/angelfiguree" target="_blank" rel="noopener noreferrer" style="margin-right: 20px; color:#222; font-weight:bold; text-decoration:none;">Instagram</a>
       <a href="https://tiktok.com/@angelfigure" target="_blank" rel="noopener noreferrer" style="color:#222; font-weight:bold; text-decoration:none;">TikTok</a>
     </div>
-  </section>
-
-  <section class="section" id="about">
-    <h2>About Us</h2>
-    <p>
-      Angel Figure is a faith-inspired streetwear brand for youth, built on themes of unity, confidence, spiritual protection, and following dreams.  
-      Every piece is designed to be more than clothing — it’s armor for your soul.
-    </p>
   </section>
 
   <section class="section" id="contact">
