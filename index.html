@@ -295,6 +295,32 @@
       right: 12px;
     }
 
+    /* Merch images at top */
+    #merch-images {
+      max-width: 900px;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+    #merch-images a {
+      flex: 1;
+      max-width: 35%;
+      box-shadow: 0 0 15px 4px #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: block;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    #merch-images a img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
     /* Responsive tweaks */
     @media (max-width: 600px) {
       header#home h1 {
@@ -308,6 +334,13 @@
       }
       #slideshow img {
         height: 260px;
+      }
+      #merch-images {
+        flex-direction: column;
+        gap: 15px;
+      }
+      #merch-images a {
+        max-width: 100%;
       }
     }
   </style>
@@ -335,13 +368,13 @@
     <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" class="btn" target="_blank" rel="noopener">Shop Now</a>
   </header>
 
-  <!-- Merch images at top, linking to store -->
-  <section style="max-width:900px; margin: 20px auto 0; display:flex; justify-content:center; gap: 20px; padding: 0 20px;">
-    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" target="_blank" rel="noopener" style="flex:1; max-width: 45%; box-shadow: 0 0 15px 4px #fff; border-radius: 8px; overflow:hidden; display:block;">
-      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure merch 1" style="width:100%; height:auto; display:block;"/>
+  <!-- Merch images at top linking to store -->
+  <section id="merch-images" aria-label="Featured merch images">
+    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" target="_blank" rel="noopener" tabindex="0">
+      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(1).jpeg" alt="Angel Figure merch 1" />
     </a>
-    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" target="_blank" rel="noopener" style="flex:1; max-width: 45%; box-shadow: 0 0 15px 4px #fff; border-radius: 8px; overflow:hidden; display:block;">
-      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure merch 2" style="width:100%; height:auto; display:block;"/>
+    <a href="https://stores.inksoft.com/angel_figure_online_store/shop/home" target="_blank" rel="noopener" tabindex="0">
+      <img src="https://github.com/crlzzy/Angelfigure/raw/main/FullSizeRender%20(2).jpeg" alt="Angel Figure merch 2" />
     </a>
   </section>
 
@@ -429,10 +462,6 @@
       showSlide(currentIndex);
     }
 
-    // Start on first slide
-    showSlide(currentIndex);
-
-    // Auto cycle every 3 seconds
     function startSlideShow() {
       slideInterval = setInterval(nextSlide, 3000);
     }
@@ -441,7 +470,6 @@
       clearInterval(slideInterval);
     }
 
-    // Button listeners
     nextBtn.addEventListener('click', () => {
       stopSlideShow();
       nextSlide();
@@ -452,6 +480,17 @@
       stopSlideShow();
       prevSlide();
       startSlideShow();
+    });
+
+    // Initialize
+    showSlide(currentIndex);
+    startSlideShow();
+  </script>
+
+</body>
+</html>
+
+
 
 
 
